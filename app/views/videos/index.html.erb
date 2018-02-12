@@ -2,25 +2,21 @@
 
 <h1>Videos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <td><%= video.title %></td>
-        <td><%= link_to 'Show', video %></td>
+<% @videos.each do |video| %>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/1180/3866/products/NEW-FEDEX-SOCKS-2710v2_1500x.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= video.title %></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%= link_to 'go to video', video, class: "btn btn-primary" %>
+    </div>
+  </div>
+
         <td><%= link_to 'Edit', edit_video_path(video) %></td>
         <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
